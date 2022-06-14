@@ -22,7 +22,7 @@ export default function ReservationCard({ name, index }: ReservationCardTypes) {
           })
         );
       }}
-      className="reservation-card-container"
+      className="bg-gray-500  w-4/5 m-4 cursor-pointer p-2"
     >
       {name}
     </div>

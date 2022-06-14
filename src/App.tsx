@@ -21,25 +21,32 @@ function App() {
   const customers = useSelector((state: RootState) => state.customer.value);
   return (
     <div className="App">
-      <div className="container">
-        <div className="reservation-container">
+      <div className="container flex">
+        <div className="reservation-container w-1/5 border-r border-red-300">
           <div>
-            <h5 className="reservation-header">Reservations</h5>
-            <div className="reservation-cards-container">
+            <h5 className=" text-2xl">Reservations</h5>
+            <div className="h-96 min-h-full ">
               {reservations.map((name, index) => {
                 return <ReservationCard index={index} name={name} />;
               })}
             </div>
           </div>
-          <div className="reservation-input-container">
+          <div className=" w-4/5">
             <input
+              className="mb-1 w-fullbg-slate-400 h-8 rounded-sm border-red-300 border-4"
               value={reservationNameInput}
               onChange={(e) => setReservationNameInput(e.target.value)}
             />
-            <button onClick={handleAddReservations}>Add</button>
+            <button
+              className="bg-green-400 text-white rounded-md  px-4 h-8"
+              onClick={handleAddReservations}
+            >
+              Add
+            </button>
           </div>
         </div>
-        <div className="customer-food-container">
+        <div className="flex flex-col w-4/5 ml-2">
+          <h5 className=" text-2xl">Customer Card</h5>
           {customers.map((customer) => {
             return (
               <CustomerCard
