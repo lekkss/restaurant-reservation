@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
+
 
 
 //only TS
@@ -16,7 +18,14 @@ interface Customer{
 }
 
 const initialState: CustomerState = {
-    value: []
+    value: [
+        {   
+            id: uuid(),
+            name:"Taylor",
+            food:["Yam", "Egg"]
+            
+        }
+    ]
 }
 export const customerSlice = createSlice({
     name: 'customers',
