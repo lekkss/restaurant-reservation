@@ -16,8 +16,12 @@ export default function CustomerCard({ id, name, food }: CustomerCardType) {
       <p className="mr-4 font-normal">{name}</p>
       <div className="flex w-full justify-between mt-4">
         <div className="flex">
-          {food.map((food) => {
-            return <p className="pr-1">"{food}"</p>;
+          {food.map((food, index) => {
+            return (
+              <p className="pr-1">
+                {index + 1}."{food}"
+              </p>
+            );
           })}
         </div>
         <div className="flex">
